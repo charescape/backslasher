@@ -1,0 +1,46 @@
+{
+  "name": "charescape/backslasher",
+  "type": "composer-plugin",
+  "description": "Composer plugin that speeds up your application by adding backslashes to all PHP internal functions and constants.",
+  "keywords": [
+    "composer",
+    "backslasher"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "David Grudl",
+      "homepage": "https://davidgrudl.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.0.5",
+    "composer-plugin-api": "^2.0",
+    "nikic/php-parser": "^4.15"
+  },
+  "require-dev": {
+    "composer/composer": "^2.0",
+    "nette/tester": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Charescape\\Backslasher\\": "src/"
+    }
+  },
+  "scripts": {
+    "tester": "tester tests -s",
+    "redo-install": [
+      "@composer self-update -vvv",
+      "rm -f composer.lock",
+      "@composer install -vvv"
+    ]
+  },
+  "extra": {
+    "class": "Charescape\\Backslasher\\Plugin",
+    "branch-alias": {
+      "dev-master": "3.0.x-dev"
+    }
+  }
+}
