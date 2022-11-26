@@ -10,14 +10,11 @@ use PhpParser\NodeVisitorAbstract;
 
 class Collector extends NodeVisitorAbstract
 {
-    /** @var array */
-    public $positions = [];
+    public array $positions = [];
 
-    /** @var array */
-    public $ignored = [];
+    public array $ignored = [];
 
-    /** @var bool */
-    private $inNamespace = false;
+    private bool $inNamespace = false;
 
     public function enterNode(Node $node): void
     {

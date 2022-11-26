@@ -17,11 +17,11 @@ use RecursiveIteratorIterator;
 
 class Backslasher
 {
-    /** @var IOInterface */
-    private $io;
+    private IOInterface $io;
 
-    /** @var array */
-    private $ignored;
+    private PhpParser\Parser $parser;
+
+    private array $ignored;
 
     public function __construct(IOInterface $io, array $ignored = [])
     {
@@ -33,9 +33,6 @@ class Backslasher
         );
     }
 
-    /**
-     * @return void
-     */
     public function processDir($vendorDir): void
     {
         $count = 0;
@@ -57,10 +54,7 @@ class Backslasher
         $this->io->write("Composer Backslasher: Added $count backslashes.");
     }
 
-    /**
-     * @return string
-     */
-    public function processCode($code, $file = null)
+    public function processCode(string $code, string|null $file = null): string
     {
         if (defined('IS_TESTING') && (IS_TESTING === true)) {
             $nodes = $this->parser->parse($code);
