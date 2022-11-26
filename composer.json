@@ -40,7 +40,7 @@
   "extra": {
     "class": "Charescape\\Backslasher\\Plugin",
     "branch-alias": {
-      "dev-master": "3.0.x-dev"
+      "dev-main": "3.0.x-dev"
     }
   }
 }
