@@ -21,7 +21,7 @@
     "nikic/php-parser": "^4.15"
   },
   "require-dev": {
-    "composer/composer": "^2.0",
+    "composer/composer": "^2.4",
     "nette/tester": "^2.4"
   },
   "autoload": {
